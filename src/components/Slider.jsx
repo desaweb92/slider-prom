@@ -16,7 +16,7 @@ const Slider = ({ slides, normalCount }) => {
 
   return (
     <div className="relative w-full overflow-hidden flex flex-col items-center justify-center">
-      <h1 className="text-3xl font-bold mb-4">
+      <h1 className="text-3xl font-bold mb-4 text-green p-2 rounded-xl shadow-md shadow-black">
         {isSpecialSlide ? 'Helados Especiales' : 'Helados Normales'}
       </h1>
       <AnimatePresence initial={false} custom={currentIndex}>
