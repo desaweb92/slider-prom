@@ -7,7 +7,7 @@ const Slide = ({ imageSrc, title, price, wholesalePrice, showPrice = true, group
       <motion.img
         src={imageSrc}
         alt={title}
-        className={` ${groupView ? 'h-32 w-[50%]' : 'h-80 w-full'} p-2 object-contain my-2 shadow-xl shadow-black rounded-xl`} // Ajustar el tamaño de la imagen
+        className={` ${groupView ? 'h-32 w-[50%] bg-[#ffffffbe]' : 'h-80 w-full'} p-2 object-contain my-2 shadow-xl shadow-black rounded-xl`} // Ajustar el tamaño de la imagen
         initial={{ scale: 1.1, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
