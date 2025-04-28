@@ -4,42 +4,49 @@ import Intro from './components/Intro';
 const App = () => {
   // Helados Normales
   const normalFlavors = [
-    { imageSrc: 'https://imgur.com/hQqyxG8.jpg', title: 'Sabor 1', price: '$5', wholesalePrice: '$4.50' },
-    { imageSrc: 'https://imgur.com/Slyin1j.jpg', title: 'Sabor 2', price: '$6' , wholesalePrice: '$4.50' },
-    { imageSrc: 'https://imgur.com/H8fglzZ.jpg', title: 'Sabor 3', price: '$5' , wholesalePrice: '$4.50' },
-    { imageSrc: 'https://imgur.com/CpXa1cc.jpg', title: 'Sabor 4', price: '$5' , wholesalePrice: '$4.50' },
-    { imageSrc: 'https://imgur.com/dCjWCVp.jpg', title: 'Sabor 5', price: '$5' , wholesalePrice: '$4.50' },
-    { imageSrc: 'https://imgur.com/iYPPdZW.jpg', title: 'Sabor 6', price: '$5' , wholesalePrice: '$4.50' },
-    { imageSrc: 'https://imgur.com/uuPqcIY.jpg', title: 'Sabor 7', price: '$5' , wholesalePrice: '$4.50' },
-    { imageSrc: 'https://imgur.com/2KqAQkM.jpg', title: 'Sabor 8', price: '$5' , wholesalePrice: '$4.50' },
-    { imageSrc: 'https://imgur.com/s3GPJLQ.jpg', title: 'Sabor 9', price: '$5' , wholesalePrice: '$4.50' },
-    { imageSrc: 'https://imgur.com/Zr2hmJk.jpg', title: 'Sabor 10', price: '$5' , wholesalePrice: '$4.50' },
-    { imageSrc: 'https://imgur.com/FJLo7aA.jpg', title: 'Sabor 11', price: '$5' , wholesalePrice: '$4.50' },
-    { imageSrc: 'https://imgur.com/N6bgzxv.jpg', title: 'Sabor 12', price: '$5' , wholesalePrice: '$4.50' },
+    { imageSrc: 'https://imgur.com/cEtgvse.jpg', title: 'Bati bati', price: '45 Bs', wholesalePrice: '0.35$', type: 'normal' },
+    { imageSrc: 'https://imgur.com/HrAJHLN.jpg', title: 'Chicle', price: '45 Bs', wholesalePrice: '0.35$', type: 'normal' },
+    { imageSrc: 'https://imgur.com/HL9L1lZ.jpg', title: 'Choco fresa', price: '45 Bs', wholesalePrice: '0.35$', type: 'normal' },
+    { imageSrc: 'https://imgur.com/vPHSvgH.jpg', title: 'Choco mantecado', price: '45 Bs', wholesalePrice: '0.35$', type: 'normal' },
+    { imageSrc: 'https://imgur.com/9vKICCa.jpg', title: 'Coco', price: '45 Bs', wholesalePrice: '0.35$', type: 'normal' },
+    { imageSrc: 'https://imgur.com/nedvd6U.jpg', title: 'Colita con leche', price: '45 Bs', wholesalePrice: '0.35$', type: 'normal' },
+    { imageSrc: 'https://imgur.com/7DDou6v.jpg', title: 'Fresa mantecado', price: '45 Bs', wholesalePrice: '0.35$', type: 'normal' },
+    { imageSrc: 'https://imgur.com/5XVR0Ve.jpg', title: 'Limón mantecado', price: '45 Bs', wholesalePrice: '0.35$', type: 'normal' },
+    { imageSrc: 'https://imgur.com/qZjS7CH.jpg', title: 'Naranja mantecado', price: '45 Bs', wholesalePrice: '0.35$', type: 'normal' },
+    { imageSrc: 'https://imgur.com/RAeVP1P.jpg', title: 'Parchita mantecado', price: '45 Bs', wholesalePrice: '0.35$', type: 'normal' },
+    { imageSrc: 'https://imgur.com/ErEowRR.jpg', title: 'Ron con pasas', price: '45 Bs', wholesalePrice: '0.35$', type: 'normal' },
   ];
 
   // Helados Especiales
   const specialFlavors = [
-    { imageSrc: 'https://imgur.com/hQqyxG8.jpg', title: 'Especial 1', price: '$5', wholesalePrice: '$6.50' },
-    { imageSrc: 'https://imgur.com/Slyin1j.jpg', title: 'Especial 2', price: '$6' , wholesalePrice: '$6.50' },
-    { imageSrc: 'https://imgur.com/H8fglzZ.jpg', title: 'Especial 3', price: '$5' , wholesalePrice: '$6.50' },
-    { imageSrc: 'https://imgur.com/CpXa1cc.jpg', title: 'Especial 4', price: '$5' , wholesalePrice: '$6.50' },
-    { imageSrc: 'https://imgur.com/dCjWCVp.jpg', title: 'Especial 5', price: '$5' , wholesalePrice: '$6.50' },
-    { imageSrc: 'https://imgur.com/iYPPdZW.jpg', title: 'Especial 6', price: '$5' , wholesalePrice: '$6.50' },
-    { imageSrc: 'https://imgur.com/uuPqcIY.jpg', title: 'Especial 7', price: '$5' , wholesalePrice: '$6.50' },
-    { imageSrc: 'https://imgur.com/2KqAQkM.jpg', title: 'Especial 8', price: '$5' , wholesalePrice: '$6.50' },
-    { imageSrc: 'https://imgur.com/s3GPJLQ.jpg', title: 'Especial 9', price: '$5' , wholesalePrice: '$6.50' },
-    { imageSrc: 'https://imgur.com/Zr2hmJk.jpg', title: 'Especial 10', price: '$5' , wholesalePrice: '$6.50' },
-    { imageSrc: 'https://imgur.com/FJLo7aA.jpg', title: 'Especial 11', price: '$5' , wholesalePrice: '$6.50' },
-    { imageSrc: 'https://imgur.com/N6bgzxv.jpg', title: 'Especial 12', price: '$5' , wholesalePrice: '$6.50' },
+    { imageSrc: 'https://imgur.com/fugcKVO.jpg', title: 'Arequipe', price: '50 Bs', wholesalePrice: '0.42$', type: 'special' },
+    { imageSrc: 'https://imgur.com/lE0oeez.jpg', title: 'Chocolate', price: '50 Bs', wholesalePrice: '0.42$', type: 'special' },
+    { imageSrc: 'https://imgur.com/Zv0KiP1.jpg', title: 'Cocosette', price: '50 Bs', wholesalePrice: '0.42$', type: 'special' },
+    { imageSrc: 'https://imgur.com/WQuZIt6.jpg', title: 'Fresa oreo', price: '50 Bs', wholesalePrice: '0.42$', type: 'special' },
+    { imageSrc: 'https://imgur.com/CWYLipm.jpg', title: 'Maní', price: '50 Bs', wholesalePrice: '0.42$', type: 'special' },
+    { imageSrc: 'https://imgur.com/Kdv2ag6.jpg', title: 'Mante brownie', price: '50 Bs', wholesalePrice: '0.42$', type: 'special' },
+    { imageSrc: 'https://imgur.com/EdTxPoH.jpg', title: 'Mante oreo', price: '50 Bs', wholesalePrice: '0.42$', type: 'special' },
+    { imageSrc: 'https://imgur.com/m7v5Zei.jpg', title: 'Pastelado', price: '50 Bs', wholesalePrice: '0.42$', type: 'special' },
+    { imageSrc: 'https://imgur.com/nrv1cTg.jpg', title: 'Susy', price: '50 Bs', wholesalePrice: '0.42$', type: 'special' },
+    { imageSrc: 'https://imgur.com/UqWPosS.jpg', title: 'Torta suiza', price: '50 Bs', wholesalePrice: '0.42$', type: 'special' },
   ];
 
-  // Combinar ambos arreglos
-  const slides = [...normalFlavors, ...specialFlavors];
+  // Helados Super especiales
+  const superSpecialFlavors = [
+    { imageSrc: 'https://imgur.com/O5kFDBK.jpg', title: 'Choco arequipe', price: '60bs', wholesalePrice: '0.47$', type: 'superSpecial' },
+    { imageSrc: 'https://imgur.com/Rt9BdQz.jpg', title: 'Choco brownie', price: '60bs', wholesalePrice: '0.47$', type: 'superSpecial' },
+    { imageSrc: 'https://imgur.com/v4qhPt3.jpg', title: 'Choco maní', price: '60bs', wholesalePrice: '0.47$', type: 'superSpecial' },
+    { imageSrc: 'https://imgur.com/Smh9FCA.jpg', title: 'Choco oreo', price: '60bs', wholesalePrice: '0.47$', type: 'superSpecial' },
+    { imageSrc: 'https://imgur.com/bDqFGx2.jpg', title: 'Marquesa', price: '60bs', wholesalePrice: '0.47$', type: 'superSpecial' },
+    { imageSrc: 'https://imgur.com/PMRdi0g.jpg', title: 'Toronto', price: '60bs', wholesalePrice: '0.47$', type: 'superSpecial' },
+  ];
+
+  // Combinar todos los arreglos
+  const slides = [...normalFlavors, ...specialFlavors, ...superSpecialFlavors];
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 text-white">
-      <Intro slides={slides} normalCount={normalFlavors.length} />
+      <Intro slides={slides} />
     </div>
   );
 };

@@ -3,9 +3,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import Slider from "./Slider";
 import pagina1 from "../assets/images/pagina-compl.png";
 import pagina2 from "../assets/images/pagina-principal.png";
+import fondo from "../assets/images/Fondo-prom.svg";
 import logo from "../assets/images/logo.png";
 
-const Intro = ({ slides, normalCount }) => {
+const Intro = ({ slides }) => {
   const [showSecondImage, setShowSecondImage] = useState(false);
   const [showSlider, setShowSlider] = useState(false);
 
@@ -25,16 +26,14 @@ const Intro = ({ slides, normalCount }) => {
   }, []);
 
   return (
-    <div
-      className="relative w-full h-screen overflow-hidden flex flex-col items-center justify-center text-white font-concert-one-regular"
-      
-    >
+    <div className="relative w-full h-screen overflow-hidden flex flex-col items-center justify-center text-white font-concert-one-regular">
       <motion.div
-        className="absolute inset-0" style={{
-            backgroundImage: 'url("https://imgur.com/fvBbTbP.jpg")',
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
+        className="absolute inset-0"
+        style={{
+          backgroundImage: `url(${fondo})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 2 }}
@@ -72,12 +71,12 @@ const Intro = ({ slides, normalCount }) => {
         {showSlider && (
           <motion.div
             key="slider"
-            initial={{ x: "100%" }}
-            animate={{ x: 0 }}
-            transition={{ duration: 1 }}
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 1, duration: 0.5 }}
             className="absolute inset-0 w-full h-full flex flex-col items-center justify-center"
           >
-            <Slider slides={slides} normalCount={normalCount} />
+            <Slider slides={slides} />
           </motion.div>
         )}
       </AnimatePresence>
