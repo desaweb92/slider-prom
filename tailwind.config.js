@@ -9,6 +9,9 @@ module.exports = {
        fontFamily: {
         'concert-one-regular': ["Concert One", "sans-serif"],
         'yanone-kaffeesatz': ["Yanone Kaffeesatz", "sans-serif"],
+        'londrina-shadow': ['"Londrina Shadow"', 'sans-serif'],
+        'matemasie': ['"Matemasie"', 'sans-serif'],
+        'timotheos': ['"Timotheos"', 'sans-serif'],
       },
       colors: {
         'green': '#6BA952', // Verde
@@ -21,5 +24,5 @@ module.exports = {
       
     },
   },
-  plugins: [],
+  plugins: [ ],
 }

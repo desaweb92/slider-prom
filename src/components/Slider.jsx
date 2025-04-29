@@ -40,8 +40,8 @@ const Slider = ({ slides }) => {
           });
         }
       },
-      showGroup ? 30000 : 5000
-    ); // 30 segundos para grupos, 5 segundos para individuales
+      showGroup ? 20000 : 5000
+    );
 
     return () => clearInterval(interval);
   }, [slides, currentIndex, showGroup, currentType]);
@@ -54,17 +54,17 @@ const Slider = ({ slides }) => {
       {!showGroup && (
         <>
           {currentSlide.type === "normal" && (
-            <h1 className="text-3xl font-bold mb-4 text-green p-2 rounded-xl shadow-md shadow-black bg-[#f7efefdc]">
+            <h1 className="font-timotheos font-semibold text-3xl mb-4 text-green p-2 rounded-xl shadow-md shadow-black">
               Helados Normales
             </h1>
           )}
           {currentSlide.type === "special" && (
-            <h1 className="text-3xl font-bold mb-4 text-green p-2 rounded-xl shadow-md shadow-black bg-[#f7efefdc]">
+            <h1 className="font-timotheos font-semibold text-3xl mb-4 text-green p-2 rounded-xl shadow-md shadow-black">
               Helados Especiales
             </h1>
           )}
           {currentSlide.type === "superSpecial" && (
-            <h1 className="text-3xl font-bold mb-4 text-green p-2 rounded-xl shadow-md shadow-black bg-[#f7efefdc]">
+            <h1 className="font-timotheos font-semibold text-3xl mb-4 text-green p-2 rounded-xl shadow-md shadow-black">
               Helados Super Especiales
             </h1>
           )}
@@ -84,21 +84,21 @@ const Slider = ({ slides }) => {
       {showGroup && (
         <>
           {currentType === "normal" && (
-            <h1 className="text-3xl font-bold mb-4 text-green p-2 rounded-xl shadow-md shadow-black bg-[#f7efefdc]">
+            <h1 className="font-timotheos font-semibold text-3xl mb-4 text-green p-2 rounded-xl shadow-md shadow-black">
               Helados normales
             </h1>
           )}
           {currentType === "special" && (
-            <h1 className="text-3xl font-bold mb-4 text-green p-2 rounded-xl shadow-md shadow-black bg-[#f7efefdc]">
+            <h1 className="font-timotheos font-semibold text-3xl mb-4 text-green p-2 rounded-xl shadow-md shadow-black">
               Helados especiales
             </h1>
           )}
           {currentType === "superSpecial" && (
-            <h1 className="text-3xl font-bold mb-4 text-green p-2 rounded-xl shadow-md shadow-black bg-[#f7efefdc]">
+            <h1 className="font-timotheos font-semibold text-3xl mb-4 text-green p-2 rounded-xl shadow-md shadow-black">
               Helados super especiales
             </h1>
           )}
-          <div className="w-[80%] grid grid-cols-2 md:grid-cols-2 lg:grid-cols-6 gap-2">
+          <div className="w-[90%] y-4 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-6 gap-2">
             {groupSlides.map((slide, index) => (
               <motion.div
                 key={index}
@@ -110,26 +110,34 @@ const Slider = ({ slides }) => {
               </motion.div>
             ))}
           </div>
-          <div className="my-4 flex items-center justify-center overflow-hidden">
+          <div className="my-4 flex items-center justify-center overflow-hidden font-timotheos font-semibold">
             <motion.p
-              className="m-2 text-center text-xl bg-fuchsia text-white px-2 py-1 rounded-lg shadow-lg shadow-black"
+              className="m-2 text-center text-[30px]  text-green px-2 py-1 rounded-lg shadow-lg shadow-black"
               initial={{ opacity: 1 }}
               exit={{ opacity: 0, y: "-100%" }}
               transition={{ duration: 1 }}
             >
-              Al detal <br /> {groupSlides[0].price}
+              Al detal <br />{" "}
+              <span className="text-[35px] text-fuchsia">
+                {groupSlides[0].price}
+              </span>
             </motion.p>
             <p className="text-fuchsia text-[30px] mx-2 font-bold"> - </p>
             <motion.p
-              className="m-2 text-center text-xl bg-fuchsia text-white px-2 py-1 rounded-lg shadow-lg shadow-black"
+              className="m-2 text-center text-[30px]  text-green px-2 py-1 rounded-lg shadow-lg shadow-black"
               initial={{ opacity: 1 }}
               exit={{ opacity: 0, y: "-100%" }}
               transition={{ duration: 1 }}
             >
               Al por mayor{" "}
-              <span className="text-[15px]">(A partir de 15 unidades)</span>{" "}
+              <span className="text-[20px] text-fuchsia">
+                (A partir de 15 unidades)
+              </span>{" "}
               <br />
-              {groupSlides[0].wholesalePrice}
+              <span className="text-[35px] text-fuchsia">
+                {" "}
+                {groupSlides[0].wholesalePrice}
+              </span>
             </motion.p>
           </div>
         </>
