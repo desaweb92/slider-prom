@@ -11,7 +11,7 @@ const App = () => {
     { imageSrc: 'https://imgur.com/9vKICCa.jpg', title: 'Coco', price: '45 Bs', wholesalePrice: '0.35$', type: 'normal' },
     { imageSrc: 'https://imgur.com/nedvd6U.jpg', title: 'Colita con leche', price: '45 Bs', wholesalePrice: '0.35$', type: 'normal' },
     { imageSrc: 'https://imgur.com/7DDou6v.jpg', title: 'Fresa mantecado', price: '45 Bs', wholesalePrice: '0.35$', type: 'normal' },
-    { imageSrc: 'https://imgur.com/5XVR0Ve.jpg', title: 'Limón mantecado', price: '45 Bs', wholesalePrice: '0.35$', type: 'normal' },
+    { imageSrc: 'https://imgur.com/gzOtnJn.jpg', title: 'Limón mantecado', price: '45 Bs', wholesalePrice: '0.35$', type: 'normal' },
     { imageSrc: 'https://imgur.com/qZjS7CH.jpg', title: 'Naranja mantecado', price: '45 Bs', wholesalePrice: '0.35$', type: 'normal' },
     { imageSrc: 'https://imgur.com/RAeVP1P.jpg', title: 'Parchita mantecado', price: '45 Bs', wholesalePrice: '0.35$', type: 'normal' },
     { imageSrc: 'https://imgur.com/ErEowRR.jpg', title: 'Ron con pasas', price: '45 Bs', wholesalePrice: '0.35$', type: 'normal' },

@@ -12,6 +12,8 @@ module.exports = {
         'londrina-shadow': ['"Londrina Shadow"', 'sans-serif'],
         'matemasie': ['"Matemasie"', 'sans-serif'],
         'timotheos': ['"Timotheos"', 'sans-serif'],
+        'ranchers': ['"Ranchers"', 'sans-serif'],
+
       },
       colors: {
         'green': '#6BA952', // Verde
