@@ -155,7 +155,7 @@ const Intro = ({ slides }) => {
         <motion.img
           src={logo}
           alt="Logo"
-          className="absolute top-4 right-4 w-36 h-36 object-contain z-30"
+          className="absolute bottom-4 right-4 w-36 h-36 object-contain z-30"
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1, duration: 0.5 }}

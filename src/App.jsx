@@ -6,7 +6,7 @@ const App = () => {
   const normalFlavors = [
     { imageSrc: 'https://imgur.com/cEtgvse.jpg', title: 'Bati bati', price: '45 Bs', wholesalePrice: '0.35$', type: 'normal' },
     { imageSrc: 'https://imgur.com/HrAJHLN.jpg', title: 'Chicle', price: '45 Bs', wholesalePrice: '0.35$', type: 'normal' },
-    { imageSrc: 'https://imgur.com/HL9L1lZ.jpg', title: 'Choco fresa', price: '45 Bs', wholesalePrice: '0.35$', type: 'normal' },
+    { imageSrc: 'https://imgur.com/HB50exj.jpg', title: 'Choco fresa', price: '45 Bs', wholesalePrice: '0.35$', type: 'normal' },
     { imageSrc: 'https://imgur.com/vPHSvgH.jpg', title: 'Choco mantecado', price: '45 Bs', wholesalePrice: '0.35$', type: 'normal' },
     { imageSrc: 'https://imgur.com/9vKICCa.jpg', title: 'Coco', price: '45 Bs', wholesalePrice: '0.35$', type: 'normal' },
     { imageSrc: 'https://imgur.com/nedvd6U.jpg', title: 'Colita con leche', price: '45 Bs', wholesalePrice: '0.35$', type: 'normal' },
