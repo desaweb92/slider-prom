@@ -7,13 +7,13 @@ const App = () => {
     { imageSrc: 'https://imgur.com/cEtgvse.jpg', title: 'Bati bati', price: '45 Bs', wholesalePrice: '0.35$', type: 'normal' },
     { imageSrc: 'https://imgur.com/HrAJHLN.jpg', title: 'Chicle', price: '45 Bs', wholesalePrice: '0.35$', type: 'normal' },
     { imageSrc: 'https://imgur.com/HB50exj.jpg', title: 'Choco fresa', price: '45 Bs', wholesalePrice: '0.35$', type: 'normal' },
-    { imageSrc: 'https://imgur.com/vPHSvgH.jpg', title: 'Choco mantecado', price: '45 Bs', wholesalePrice: '0.35$', type: 'normal' },
+    { imageSrc: 'https://imgur.com/reTn6UL.jpg', title: 'Choco mantecado', price: '45 Bs', wholesalePrice: '0.35$', type: 'normal' },
     { imageSrc: 'https://imgur.com/9vKICCa.jpg', title: 'Coco', price: '45 Bs', wholesalePrice: '0.35$', type: 'normal' },
     { imageSrc: 'https://imgur.com/nedvd6U.jpg', title: 'Colita con leche', price: '45 Bs', wholesalePrice: '0.35$', type: 'normal' },
-    { imageSrc: 'https://imgur.com/7DDou6v.jpg', title: 'Fresa mantecado', price: '45 Bs', wholesalePrice: '0.35$', type: 'normal' },
+    { imageSrc: 'https://imgur.com/cQ8dlMP.jpg', title: 'Fresa mantecado', price: '45 Bs', wholesalePrice: '0.35$', type: 'normal' },
     { imageSrc: 'https://imgur.com/gzOtnJn.jpg', title: 'Limón mantecado', price: '45 Bs', wholesalePrice: '0.35$', type: 'normal' },
     { imageSrc: 'https://imgur.com/qZjS7CH.jpg', title: 'Naranja mantecado', price: '45 Bs', wholesalePrice: '0.35$', type: 'normal' },
-    { imageSrc: 'https://imgur.com/RAeVP1P.jpg', title: 'Parchita mantecado', price: '45 Bs', wholesalePrice: '0.35$', type: 'normal' },
+    { imageSrc: 'https://imgur.com/KvDn8uP.jpg', title: 'Parchita mantecado', price: '45 Bs', wholesalePrice: '0.35$', type: 'normal' },
     { imageSrc: 'https://imgur.com/ErEowRR.jpg', title: 'Ron con pasas', price: '45 Bs', wholesalePrice: '0.35$', type: 'normal' },
   ];
 
@@ -34,7 +34,7 @@ const App = () => {
   // Helados Super especiales
   const superSpecialFlavors = [
     { imageSrc: 'https://imgur.com/O5kFDBK.jpg', title: 'Choco arequipe', price: '60bs', wholesalePrice: '0.47$', type: 'superSpecial' },
-    { imageSrc: 'https://imgur.com/Rt9BdQz.jpg', title: 'Choco brownie', price: '60bs', wholesalePrice: '0.47$', type: 'superSpecial' },
+    { imageSrc: 'https://imgur.com/Wz4QuFg.jpg', title: 'Choco brownie', price: '60bs', wholesalePrice: '0.47$', type: 'superSpecial' },
     { imageSrc: 'https://imgur.com/v4qhPt3.jpg', title: 'Choco maní', price: '60bs', wholesalePrice: '0.47$', type: 'superSpecial' },
     { imageSrc: 'https://imgur.com/Smh9FCA.jpg', title: 'Choco oreo', price: '60bs', wholesalePrice: '0.47$', type: 'superSpecial' },
     { imageSrc: 'https://imgur.com/bDqFGx2.jpg', title: 'Marquesa', price: '60bs', wholesalePrice: '0.47$', type: 'superSpecial' },
