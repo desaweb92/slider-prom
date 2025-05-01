@@ -4,6 +4,7 @@ import Intro from './components/Intro';
 const App = () => {
   // Helados Normales
   const normalFlavors = [
+    
     { imageSrc: 'https://imgur.com/cEtgvse.jpg', title: 'Bati bati', price: '45 Bs', wholesalePrice: '0.35$', type: 'normal' },
     { imageSrc: 'https://imgur.com/HrAJHLN.jpg', title: 'Chicle', price: '45 Bs', wholesalePrice: '0.35$', type: 'normal' },
     { imageSrc: 'https://imgur.com/HB50exj.jpg', title: 'Choco fresa', price: '45 Bs', wholesalePrice: '0.35$', type: 'normal' },
@@ -41,6 +42,7 @@ const App = () => {
     { imageSrc: 'https://imgur.com/PMRdi0g.jpg', title: 'Toronto', price: '60bs', wholesalePrice: '0.47$', type: 'superSpecial' },
   ];
 
+  
   // Combinar todos los arreglos
   const slides = [...normalFlavors, ...specialFlavors, ...superSpecialFlavors];
 

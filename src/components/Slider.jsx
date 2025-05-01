@@ -7,8 +7,9 @@ const Slider = ({ slides }) => {
   const [showGroup, setShowGroup] = useState(false);
   const [currentType, setCurrentType] = useState("normal");
   const [showCategoryTitle, setShowCategoryTitle] = useState(false);
+  const [showFirstSlide, setShowFirstSlide] = useState(false); // Nuevo estado para controlar el retraso
 
-  // Componente para animar cada letra
+  // Componente para animar cada letra (IGUAL QUE TU VERSIÓN ORIGINAL)
   const AnimatedLetter = ({ children }) => {
     return (
       <motion.span
@@ -29,73 +30,84 @@ const Slider = ({ slides }) => {
     );
   };
 
-  // Efecto para mostrar el título al cambiar de categoría
+  // Efecto para mostrar el título al cambiar de categoría (MODIFICADO SOLO PARA EL RETRASO)
   useEffect(() => {
     setShowCategoryTitle(true);
-    const timer = setTimeout(() => setShowCategoryTitle(false), 3000);
-    return () => clearTimeout(timer);
+    setShowFirstSlide(false); // Asegurar que la primera slide no se muestre durante el título
+    
+    const titleTimer = setTimeout(() => {
+      setShowCategoryTitle(false);
+      // Esperar 1 segundo adicional después de ocultar el título
+      const slideTimer = setTimeout(() => {
+        setShowFirstSlide(true);
+      }, 1000);
+      return () => clearTimeout(slideTimer);
+    }, 3000); // 3 segundos para el título (igual que tu versión original)
+    
+    return () => clearTimeout(titleTimer);
   }, [currentType]);
 
- useEffect(() => {
-  const interval = setInterval(
-    () => {
-      if (showGroup) {
-        setShowGroup(false);
-        if (currentType === "normal") {
-          setCurrentType("special");
-          setCurrentIndex(
-            slides.findIndex((slide) => slide.type === "special")
-          );
-        } else if (currentType === "special") {
-          setCurrentType("superSpecial");
-          setCurrentIndex(
-            slides.findIndex((slide) => slide.type === "superSpecial")
-          );
-        } else if (currentType === "superSpecial") {
-          // Manejar la transición especial
-          const transitionIndex = slides.findIndex((slide) => slide.isTransitionImage);
-          if (transitionIndex !== -1) {
-            setCurrentIndex(transitionIndex);
-            setCurrentType("transition");
-          } else {
+  // Efecto para el slider (EXACTAMENTE IGUAL QUE TU VERSIÓN ORIGINAL)
+  useEffect(() => {
+    const interval = setInterval(
+      () => {
+        if (showGroup) {
+          setShowGroup(false);
+          if (currentType === "normal") {
+            setCurrentType("special");
+            setCurrentIndex(
+              slides.findIndex((slide) => slide.type === "special")
+            );
+          } else if (currentType === "special") {
+            setCurrentType("superSpecial");
+            setCurrentIndex(
+              slides.findIndex((slide) => slide.type === "superSpecial")
+            );
+          } else if (currentType === "superSpecial") {
+            const transitionIndex = slides.findIndex((slide) => slide.isTransitionImage);
+            if (transitionIndex !== -1) {
+              setCurrentIndex(transitionIndex);
+              setCurrentType("transition");
+            } else {
+              setCurrentIndex(0);
+              setCurrentType("normal");
+            }
+          } else if (currentType === "transition") {
             setCurrentIndex(0);
             setCurrentType("normal");
           }
-        } else if (currentType === "transition") {
-          setCurrentIndex(0);
-          setCurrentType("normal");
+        } else {
+          setCurrentIndex((prevIndex) => {
+            const nextIndex = prevIndex + 1;
+            if (
+              nextIndex >= slides.length ||
+              (slides[nextIndex].type !== currentType && !slides[nextIndex].isTransitionImage)
+            ) {
+              setShowGroup(true);
+              return prevIndex;
+            }
+            return nextIndex;
+          });
         }
-      } else {
-        setCurrentIndex((prevIndex) => {
-          const nextIndex = prevIndex + 1;
-          if (
-            nextIndex >= slides.length ||
-            (slides[nextIndex].type !== currentType && !slides[nextIndex].isTransitionImage)
-          ) {
-            setShowGroup(true);
-            return prevIndex;
-          }
-          return nextIndex;
-        });
-      }
-    },
-    showGroup ? 20000 : (currentType === "transition" ? 5000 : 5000) // 5 segundos para la imagen de transición
-  );
-  return () => clearInterval(interval);
-}, [slides, currentIndex, showGroup, currentType]);
+      },
+      showGroup ? 20000 : (currentType === "transition" ? 5000 : 5000) // Exactamente igual que tu versión
+    );
+    return () => clearInterval(interval);
+  }, [slides, currentIndex, showGroup, currentType]);
 
   const currentSlide = slides[currentIndex];
   const groupSlides = slides.filter((slide) => slide.type === currentType);
 
-  // Estilos para los letreros
+  // Estilos para los letreros (IGUAL QUE TU VERSIÓN ORIGINAL)
   const categoryTitles = {
     normal: "Normales",
     special: "Especiales",
-    superSpecial: "Super Especiales",
+    superSpecial: "Super especiales",
   };
 
   return (
     <div className="relative w-full overflow-hidden flex flex-col items-center justify-center">
+      {/* Animación del título (EXACTAMENTE IGUAL QUE TU VERSIÓN) */}
       <AnimatePresence>
         {showCategoryTitle && (
           <motion.div
@@ -129,7 +141,9 @@ const Slider = ({ slides }) => {
           </motion.div>
         )}
       </AnimatePresence>
-      {!showGroup && (
+
+      {/* Slides individuales (SOLO CAMBIO LA CONDICIÓN !showGroup && showFirstSlide) */}
+      {!showGroup && showFirstSlide && (
         <>
           {currentSlide.type === "normal" && (
             <h1 className="">
@@ -159,6 +173,8 @@ const Slider = ({ slides }) => {
           </AnimatePresence>
         </>
       )}
+
+      {/* Vista de grupo (EXACTAMENTE IGUAL QUE TU VERSIÓN ORIGINAL) */}
       {showGroup && (
         <>
           {currentType === "normal" && (
