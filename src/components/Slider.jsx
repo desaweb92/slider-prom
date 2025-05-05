@@ -31,21 +31,24 @@ const Slider = ({ slides }) => {
   };
 
   // Efecto para mostrar el título al cambiar de categoría (MODIFICADO SOLO PARA EL RETRASO)
-  useEffect(() => {
-    setShowCategoryTitle(true);
-    setShowFirstSlide(false); // Asegurar que la primera slide no se muestre durante el título
+// En el useEffect del título, ajusta los tiempos:
+useEffect(() => {
+  setShowCategoryTitle(true);
+  setShowFirstSlide(false);
+  
+  const titleTimer = setTimeout(() => {
+    setShowCategoryTitle(false);
     
-    const titleTimer = setTimeout(() => {
-      setShowCategoryTitle(false);
-      // Esperar 1 segundo adicional después de ocultar el título
-      const slideTimer = setTimeout(() => {
-        setShowFirstSlide(true);
-      }, 1000);
-      return () => clearTimeout(slideTimer);
-    }, 3000); // 3 segundos para el título (igual que tu versión original)
+    // Agrega un pequeño delay antes de mostrar la primera slide
+    const slideTimer = setTimeout(() => {
+      setShowFirstSlide(true);
+    }, 500); // Reducido de 1000 a 500ms
     
-    return () => clearTimeout(titleTimer);
-  }, [currentType]);
+    return () => clearTimeout(slideTimer);
+  }, 3000);
+  
+  return () => clearTimeout(titleTimer);
+}, [currentType]);
 
   // Efecto para el slider (EXACTAMENTE IGUAL QUE TU VERSIÓN ORIGINAL)
   useEffect(() => {
@@ -107,7 +110,7 @@ const Slider = ({ slides }) => {
 
   return (
     <div className="relative w-full overflow-hidden flex flex-col items-center justify-center">
-      {/* Animación del título (EXACTAMENTE IGUAL QUE TU VERSIÓN) */}
+      {/* Animación del título */}
       <AnimatePresence>
         {showCategoryTitle && (
           <motion.div
@@ -160,17 +163,17 @@ const Slider = ({ slides }) => {
               
             </h1>
           )}
-          <AnimatePresence initial={false} custom={currentIndex}>
-            <motion.div
-              key={currentIndex}
-              custom={currentIndex}
-              initial={{ opacity: 1 }}
-              exit={{ opacity: 0, y: "-100%" }}
-              transition={{ duration: 0 }}
-            >
-              <Slide {...slides[currentIndex]} />
-            </motion.div>
-          </AnimatePresence>
+      <AnimatePresence mode="wait" initial={false}>
+    <motion.div
+      key={currentIndex}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <Slide {...slides[currentIndex]} />
+    </motion.div>
+  </AnimatePresence>
         </>
       )}
 

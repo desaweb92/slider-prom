@@ -88,7 +88,6 @@ const Intro = ({ slides }) => {
 
   return (
     <div className="relative w-full h-screen overflow-hidden flex flex-col items-center justify-center text-white font-concert-one-regular">
-      {/* Video de fondo con reproducción forzada */}
       <motion.video
         ref={videoRef}
         autoPlay

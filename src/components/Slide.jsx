@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const Slide = ({ imageSrc, title, price, wholesalePrice, showPrice = true, groupView = false, isTransitionImage = false }) => {
+const Slide = ({ imageSrc, title, price, wholesalePrice, showPrice = true, groupView = false, isTransitionImage = false, forceAnimation = false }) => {
   // Animaciones de entrada posibles
   const entranceAnimations = [
     { y: -100, x: 0 },    // Desde arriba
@@ -18,6 +18,7 @@ const Slide = ({ imageSrc, title, price, wholesalePrice, showPrice = true, group
   const randomAnimation = entranceAnimations[
     Math.floor(Math.random() * entranceAnimations.length)
   ];
+  
 
   // Si es la imagen de transición
   if (isTransitionImage) {
